@@ -1,30 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tarefas</title>
+  <title>Minhas Tarefas</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      border: 10px solid blue;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      background: blue;
+    }
+
+    header {
+      color: lightblue;
+      text-transform: uppercase;
+      font-size: 10px;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    main {
+      flex: auto;
+      background: lightblue;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    main ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    main li {
+      border-bottom: 1px solid blue;
+      padding: 5px 0;
+    }
+
+    footer {
+      display: flex;
+      padding-top: 5px;
+    }
+
+    footer input {
+      flex: auto;
+      padding: 5px;
+    }
+  </style>
 </head>
+
 <body>
+  <header>
     <h1>Tarefas</h1>
-    <ul>
-        <li>Estudar HTML</li>
-        <li>Estudar CSS</li>
-        <li>Estuda JS</li>
-    </ul>
+  </header>
+  <main>
+    <ul></ul>
+  </main>
+  <footer>
     <input>
     <button onclick="add()">adicionar</button>
+  </footer>
     <script>
+        
+        listajs = ['Estudar HTML', 'Estudar CSS', 'Estudar JS']
+
         function add() {
-            const ul = document.querySelector("ul")
             const input = document.querySelector("input")
-            const tarefa = input.value
-            const li = document.createElement("li")
-            li.innerText = tarefa
-            ul.appendChild(li)
+            listajs.push(input.value)
             input.value = ""
+            render()
         }
+
+        function render() {
+            const ul = document.querySelector("ul")
+            ul.innerHTML = null
+            listajs.forEach(function (tar) {
+                const li = document.createElement("li")
+                li.innerText = tar
+                ul.appendChild(li)
+            })
+        }
+        render()
     </script>
 </body>
 </html>
