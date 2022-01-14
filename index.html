@@ -33,9 +33,9 @@
       border-radius: 10px;
     }
 
-    main ul {
-      padding: 0;
-      list-style: none;
+    main ol {
+    
+      padding: 10px;
     }
 
     main li {
@@ -60,32 +60,41 @@
     <h1>Tarefas</h1>
   </header>
   <main>
-    <ul></ul>
+    <ol></ol>
   </main>
   <footer>
     <input>
     <button onclick="add()">adicionar</button>
+
+    <button onclick="remove()">remover</button>
+
   </footer>
     <script>
         
         listajs = ['Estudar HTML', 'Estudar CSS', 'Estudar JS']
+        const input = document.querySelector("input")
 
         function add() {
-            const input = document.querySelector("input")
             listajs.push(input.value)
             input.value = ""
             render()
         }
 
         function render() {
-            const ul = document.querySelector("ul")
-            ul.innerHTML = null
+            const ol = document.querySelector("ol")
+            ol.innerHTML = null
             listajs.forEach(function (tar) {
                 const li = document.createElement("li")
                 li.innerText = tar
-                ul.appendChild(li)
+                ol.appendChild(li)
             })
+            }
+
+        function remove() {
+          listajs.splice(input.value - 1, 1)
+          render()
         }
+
         render()
     </script>
 </body>
