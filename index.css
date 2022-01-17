@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    padding: 1vh 5vw;
+    background-color: rgb(209, 166, 49);
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#mesa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+    background-color:navajowhite;
+    border: 1.5vmin solid rgb(180, 59, 59);
+    border-radius: 20%;
+    height: 92vh;
+    width: 90vw;
+    min-height: 600px;
+    min-width: 400px;
+}
+
+#folha {
+    display: flex;
+    padding: 1.5vmin;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 2vmin solid maroon;
+    height: 95%;
+    width: 60%;
+    min-width: 290px;
+}
+
+#titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 4.2vmin;
+    text-decoration: underline;
+}
+
+ul {
+    flex: auto;
+}

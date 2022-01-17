@@ -1,101 +1,20 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-  <title>Minhas Tarefas</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    body {
-      border: 10px solid blue;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      background: blue;
-    }
-
-    header {
-      color: lightblue;
-      text-transform: uppercase;
-      font-size: 10px;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    main {
-      flex: auto;
-      background: lightblue;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    main ol {
-    
-      padding: 10px;
-    }
-
-    main li {
-      border-bottom: 1px solid blue;
-      padding: 5px 0;
-    }
-
-    footer {
-      display: flex;
-      padding-top: 5px;
-    }
-
-    footer input {
-      flex: auto;
-      padding: 5px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Lista de Tarefas</title>
 </head>
-
 <body>
-  <header>
-    <h1>Tarefas</h1>
-  </header>
-  <main>
-    <ol></ol>
-  </main>
-  <footer>
-    <input>
-    <button onclick="add()">adicionar</button>
-
-    <button onclick="remove()">remover</button>
-
-  </footer>
-    <script>
-        
-        listajs = ['Estudar HTML', 'Estudar CSS', 'Estudar JS']
-        const input = document.querySelector("input")
-
-        function add() {
-            listajs.push(input.value)
-            input.value = ""
-            render()
-        }
-
-        function render() {
-            const ol = document.querySelector("ol")
-            ol.innerHTML = null
-            listajs.forEach(function (tar) {
-                const li = document.createElement("li")
-                li.innerText = tar
-                ol.appendChild(li)
-            })
-            }
-
-        function remove() {
-          listajs.splice(input.value - 1, 1)
-          render()
-        }
-
-        render()
-    </script>
+  <div id="mesa">
+    <div id="folha">
+      <div id="titulo">
+        <h1>Tarefas</h1>
+      </div>
+      <ul></ul>
+    </div>
+  </div>
 </body>
 </html>
